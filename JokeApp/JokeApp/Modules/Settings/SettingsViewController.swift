@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController {
         return networkSwitcher
     }()
     
-    var viewModel: SettingsViewModel?
+    var viewModel: MySettingsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

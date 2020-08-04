@@ -1,7 +1,7 @@
 import UIKit
 
 public final class MyJokesListViewController: UITableViewController {
-    var viewModel: MyJokesListViewModel?
+    var viewModel: FeedLoaderViewModel?
     
     var tableModel = [MyJokesCellViewController]() {
         didSet { tableView.reloadData() }

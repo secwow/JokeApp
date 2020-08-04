@@ -1,6 +1,6 @@
 import DomainLogic
 
-class JokeCellViewModel {
+class JokesCellViewModel {
     private let jokeModel: Joke
     private weak var favouriteService: JokesFavouriteService?
     private weak var shareDelegate: ShareDelegate?

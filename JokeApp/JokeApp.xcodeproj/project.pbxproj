@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		EF1D0E1024D853CD00550380 /* JokesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E0F24D853CD00550380 /* JokesListViewController.swift */; };
 		EF1D0E1324D8550600550380 /* UITableView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1224D8550600550380 /* UITableView+Helpers.swift */; };
-		EF1D0E1524D8590900550380 /* JokeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1424D8590900550380 /* JokeCellViewModel.swift */; };
+		EF1D0E1524D8590900550380 /* JokesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1424D8590900550380 /* JokesCellViewModel.swift */; };
 		EF1D0E1724D8591D00550380 /* JokesCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1624D8591D00550380 /* JokesCellViewController.swift */; };
-		EF1D0E1924D8594B00550380 /* JokesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1824D8594B00550380 /* JokesListViewModel.swift */; };
 		EF1D0E1C24D85A3D00550380 /* JokeListComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1B24D85A3D00550380 /* JokeListComposer.swift */; };
 		EF1D0E1E24D85FB500550380 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1D24D85FB500550380 /* MainQueueDispatchDecorator.swift */; };
 		EF1D0E2024D8614900550380 /* JokesLoaderCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1F24D8614900550380 /* JokesLoaderCompositor.swift */; };
@@ -33,7 +32,7 @@
 		EF1D0E4424D8A9A500550380 /* AddNewJokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4324D8A9A500550380 /* AddNewJokeController.swift */; };
 		EF1D0E4624D941D500550380 /* AddNewJokeComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4524D941D500550380 /* AddNewJokeComposer.swift */; };
 		EF1D0E4824D9464400550380 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4724D9464400550380 /* SettingsViewController.swift */; };
-		EF1D0E4A24D94DAD00550380 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4924D94DAD00550380 /* SettingsViewModel.swift */; };
+		EF1D0E4A24D94DAD00550380 /* MySettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4924D94DAD00550380 /* MySettingsViewModel.swift */; };
 		EF1D0E4C24D9544600550380 /* SettingsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4B24D9544600550380 /* SettingsComposer.swift */; };
 		EF1D0E4E24D9581F00550380 /* NetworkInstructor+ChuckNorris.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4D24D9581F00550380 /* NetworkInstructor+ChuckNorris.swift */; };
 		EF1D0E5024D95BAE00550380 /* MyJokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E4F24D95BAE00550380 /* MyJokesViewController.swift */; };
@@ -55,6 +54,10 @@
 		EF6BD4B824D6B179004DF4B9 /* DomainLogic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6BD4B724D6B179004DF4B9 /* DomainLogic.framework */; };
 		EF6BD4B924D6B179004DF4B9 /* DomainLogic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF6BD4B724D6B179004DF4B9 /* DomainLogic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF822EE824D9B0FA0097877A /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822EE724D9B0FA0097877A /* ServiceFactory.swift */; };
+		EF822EEA24D9B97C0097877A /* FeedLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822EE924D9B97C0097877A /* FeedLoaderViewModel.swift */; };
+		EF822EEC24D9BA8B0097877A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822EEB24D9BA8B0097877A /* SettingsViewModel.swift */; };
+		EF822EEE24D9BAF00097877A /* JokesListFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822EED24D9BAF00097877A /* JokesListFeedViewModel.swift */; };
+		EF822EF024D9BBA40097877A /* JokesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822EEF24D9BBA40097877A /* JokesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,9 +87,8 @@
 /* Begin PBXFileReference section */
 		EF1D0E0F24D853CD00550380 /* JokesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListViewController.swift; sourceTree = "<group>"; };
 		EF1D0E1224D8550600550380 /* UITableView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helpers.swift"; sourceTree = "<group>"; };
-		EF1D0E1424D8590900550380 /* JokeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeCellViewModel.swift; sourceTree = "<group>"; };
+		EF1D0E1424D8590900550380 /* JokesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCellViewModel.swift; sourceTree = "<group>"; };
 		EF1D0E1624D8591D00550380 /* JokesCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCellViewController.swift; sourceTree = "<group>"; };
-		EF1D0E1824D8594B00550380 /* JokesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListViewModel.swift; sourceTree = "<group>"; };
 		EF1D0E1B24D85A3D00550380 /* JokeListComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeListComposer.swift; sourceTree = "<group>"; };
 		EF1D0E1D24D85FB500550380 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		EF1D0E1F24D8614900550380 /* JokesLoaderCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesLoaderCompositor.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		EF1D0E4324D8A9A500550380 /* AddNewJokeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJokeController.swift; sourceTree = "<group>"; };
 		EF1D0E4524D941D500550380 /* AddNewJokeComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJokeComposer.swift; sourceTree = "<group>"; };
 		EF1D0E4724D9464400550380 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		EF1D0E4924D94DAD00550380 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		EF1D0E4924D94DAD00550380 /* MySettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingsViewModel.swift; sourceTree = "<group>"; };
 		EF1D0E4B24D9544600550380 /* SettingsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsComposer.swift; sourceTree = "<group>"; };
 		EF1D0E4D24D9581F00550380 /* NetworkInstructor+ChuckNorris.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInstructor+ChuckNorris.swift"; sourceTree = "<group>"; };
 		EF1D0E4F24D95BAE00550380 /* MyJokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJokesViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,10 @@
 		EF352BA524D1985100736438 /* JokeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeCellView.swift; sourceTree = "<group>"; };
 		EF6BD4B724D6B179004DF4B9 /* DomainLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DomainLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF822EE724D9B0FA0097877A /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		EF822EE924D9B97C0097877A /* FeedLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderViewModel.swift; sourceTree = "<group>"; };
+		EF822EEB24D9BA8B0097877A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		EF822EED24D9BAF00097877A /* JokesListFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListFeedViewModel.swift; sourceTree = "<group>"; };
+		EF822EEF24D9BBA40097877A /* JokesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,9 +273,10 @@
 			children = (
 				EF352BA524D1985100736438 /* JokeCellView.swift */,
 				EF1D0E0F24D853CD00550380 /* JokesListViewController.swift */,
-				EF1D0E1424D8590900550380 /* JokeCellViewModel.swift */,
+				EF1D0E1424D8590900550380 /* JokesCellViewModel.swift */,
 				EF1D0E1624D8591D00550380 /* JokesCellViewController.swift */,
-				EF1D0E1824D8594B00550380 /* JokesListViewModel.swift */,
+				EF822EED24D9BAF00097877A /* JokesListFeedViewModel.swift */,
+				EF822EEF24D9BBA40097877A /* JokesListViewModel.swift */,
 			);
 			path = JokesFeed;
 			sourceTree = "<group>";
@@ -278,8 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				EF1D0E4724D9464400550380 /* SettingsViewController.swift */,
-				EF1D0E4924D94DAD00550380 /* SettingsViewModel.swift */,
+				EF1D0E4924D94DAD00550380 /* MySettingsViewModel.swift */,
 				EF1D0E5524D95C0E00550380 /* ChuckNorrisProtocol.swift */,
+				EF822EEB24D9BA8B0097877A /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 				EF1D0E4F24D95BAE00550380 /* MyJokesViewController.swift */,
 				EF1D0E5124D95BDB00550380 /* AddNewJokeViewModel.swift */,
 				EF1D0E5324D95BEB00550380 /* JokesSavingService.swift */,
+				EF822EE924D9B97C0097877A /* FeedLoaderViewModel.swift */,
 			);
 			path = MyJokesList;
 			sourceTree = "<group>";
@@ -405,11 +414,12 @@
 			files = (
 				EF352BA624D1985100736438 /* JokeCellView.swift in Sources */,
 				EF1D0E3624D889CC00550380 /* MyJokesCellViewController.swift in Sources */,
+				EF822EF024D9BBA40097877A /* JokesListViewModel.swift in Sources */,
 				EF1D0E5A24D961DD00550380 /* ChuckNorrisReplace.swift in Sources */,
 				EF1D0E1E24D85FB500550380 /* MainQueueDispatchDecorator.swift in Sources */,
 				EF822EE824D9B0FA0097877A /* ServiceFactory.swift in Sources */,
+				EF822EEA24D9B97C0097877A /* FeedLoaderViewModel.swift in Sources */,
 				EF1D0E3E24D891FC00550380 /* RouterImp.swift in Sources */,
-				EF1D0E1924D8594B00550380 /* JokesListViewModel.swift in Sources */,
 				EF1D0E1324D8550600550380 /* UITableView+Helpers.swift in Sources */,
 				EF352BA024D1580E00736438 /* AppCoordinator.swift in Sources */,
 				EF1D0E5224D95BDB00550380 /* AddNewJokeViewModel.swift in Sources */,
@@ -421,6 +431,7 @@
 				EF1D0E1024D853CD00550380 /* JokesListViewController.swift in Sources */,
 				EF1D0E1C24D85A3D00550380 /* JokeListComposer.swift in Sources */,
 				EF1D0E2024D8614900550380 /* JokesLoaderCompositor.swift in Sources */,
+				EF822EEC24D9BA8B0097877A /* SettingsViewModel.swift in Sources */,
 				EF1D0E5024D95BAE00550380 /* MyJokesViewController.swift in Sources */,
 				EF352B2924D05A1C00736438 /* AppDelegate.swift in Sources */,
 				EF1D0E4E24D9581F00550380 /* NetworkInstructor+ChuckNorris.swift in Sources */,
@@ -429,7 +440,7 @@
 				EF1D0E4C24D9544600550380 /* SettingsComposer.swift in Sources */,
 				EF352B9E24D157F700736438 /* Coordinator.swift in Sources */,
 				EF1D0E4624D941D500550380 /* AddNewJokeComposer.swift in Sources */,
-				EF1D0E4A24D94DAD00550380 /* SettingsViewModel.swift in Sources */,
+				EF1D0E4A24D94DAD00550380 /* MySettingsViewModel.swift in Sources */,
 				EF1D0E3224D8898900550380 /* MyJokeCellViewModel.swift in Sources */,
 				EF1D0E2224D863A000550380 /* NetworkInstructor.swift in Sources */,
 				EF1D0E4424D8A9A500550380 /* AddNewJokeController.swift in Sources */,
@@ -437,9 +448,10 @@
 				EF1D0E2624D863EB00550380 /* CachedJokesLoader.swift in Sources */,
 				EF1D0E5624D95C0E00550380 /* ChuckNorrisProtocol.swift in Sources */,
 				EF1D0E3824D889E000550380 /* MyJokesListViewModel.swift in Sources */,
+				EF822EEE24D9BAF00097877A /* JokesListFeedViewModel.swift in Sources */,
 				EF1D0E5424D95BEB00550380 /* JokesSavingService.swift in Sources */,
 				EF1D0E3A24D88B1700550380 /* MyJokesListComposer.swift in Sources */,
-				EF1D0E1524D8590900550380 /* JokeCellViewModel.swift in Sources */,
+				EF1D0E1524D8590900550380 /* JokesCellViewModel.swift in Sources */,
 				EF1D0E4824D9464400550380 /* SettingsViewController.swift in Sources */,
 				EF1D0E2A24D874BF00550380 /* JokesFavouriteService.swift in Sources */,
 				EF1D0E2424D863B700550380 /* NetworkInstructorImp.swift in Sources */,

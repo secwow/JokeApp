@@ -8,7 +8,7 @@ class JokeListComposer {
                         networkInstructor: NetworkInstructor,
                         shareDelegate: ShareDelegate) -> JokesListViewController {
         let vc = JokesListViewController()
-        let viewModel = JokesListViewModel(jokesLoader:
+        let viewModel = JokesListFeedViewModel(jokesLoader:
             MainQueueDispatchDecorator(jokesLoader), networkInstructor: networkInstructor
         )
         
@@ -24,10 +24,10 @@ class JokeListComposer {
     private static func adaptJokeToCellControllers(forwardingTo controller: JokesListViewController,
                                                    jokesFavourite: JokesFavouriteService,
                                                    shareDelegate: ShareDelegate,
-                                                   viewModel: JokesListViewModel) -> ([Joke]) -> Void {
+                                                   viewModel: JokesListFeedViewModel) -> ([Joke]) -> Void {
         return { [weak controller] feed in
             controller?.tableModel = feed.map({
-                JokesCellViewController(with: JokeCellViewModel(jokeModel: $0,
+                JokesCellViewController(with: JokesCellViewModel(jokeModel: $0,
                                                                 favouriteService: jokesFavourite,
                                                                 shareDelegate: shareDelegate))
             })

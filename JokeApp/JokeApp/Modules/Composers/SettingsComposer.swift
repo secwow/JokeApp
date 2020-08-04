@@ -5,7 +5,7 @@ class SettingsComposer {
     
     static func compose(service: ChuckNorrisProtocol) -> SettingsViewController {
         let vc = SettingsViewController()
-        vc.viewModel = SettingsViewModel(networkInstructor: service)
+        vc.viewModel = MySettingsViewModel(networkInstructor: service)
         
         return vc
     }

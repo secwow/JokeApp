@@ -2,10 +2,10 @@ import DomainLogic
 import UIKit
 
 class JokesCellViewController {
-    private var viewModel: JokeCellViewModel
+    private var viewModel: JokesCellViewModel
     private var cell: JokeCellView?
     
-    init(with viewModel: JokeCellViewModel) {
+    init(with viewModel: JokesCellViewModel) {
         self.viewModel = viewModel
     }
     

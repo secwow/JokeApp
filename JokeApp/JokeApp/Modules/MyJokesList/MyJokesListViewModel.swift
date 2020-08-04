@@ -22,3 +22,5 @@ final class MyJokesListViewModel {
         }
     }
 }
+
+extension MyJokesListViewModel: FeedLoaderViewModel {}
