@@ -11,16 +11,14 @@ public class LocalJokesLoader {
 }
 
 extension LocalJokesLoader: JokesLoader {
-    private class LocalJokesCachePolicy {
-        private init() {}
-        
+    private enum LocalJokesCachePolicy {        
         private static let calendar = Calendar(identifier: .gregorian)
         
         private static var maxCacheAgeInDays: Int {
             return 7
         }
         
-        static func validate(_ cache: (CachedFeed), with date: Date) -> Bool {
+        static func validate(_ cache: CachedFeed, with date: Date) -> Bool {
             guard let maxCacheAge = calendar.date(byAdding: .day, value: maxCacheAgeInDays, to: cache.timestamp) else {
                 return false
             }
@@ -31,7 +29,7 @@ extension LocalJokesLoader: JokesLoader {
     
     public typealias LoadResult = JokesLoader.Result
     
-    public func load(completion: @escaping (JokesLoader.Result) -> Void) {
+    public func load(completion: @escaping (LoadResult) -> Void) {
           store.retrieve { [weak self] (result) in
               guard let self = self else { return }
               

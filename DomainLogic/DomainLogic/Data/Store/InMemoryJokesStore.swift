@@ -44,3 +44,15 @@ public final class InMemoryJokesStore: JokesStore {
         completion(.success(jokes.local))
     }
 }
+
+private extension Array where Element == FavouriteJoke {
+    var local: [LocalJoke] {
+        return self.map({$0.local})
+    }
+}
+
+private extension FavouriteJoke {
+    var local: LocalJoke {
+        return LocalJoke(with: id, joke: joke)
+    }
+}

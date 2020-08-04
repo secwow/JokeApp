@@ -1,9 +1,9 @@
 import Foundation
 
 class MySettingsViewModel: SettingsViewModel {
-    private let networkInstructor: ChuckNorrisProtocol
+    private let networkInstructor: OfflineNameReplacer
     
-    init(networkInstructor: ChuckNorrisProtocol) {
+    init(networkInstructor: OfflineNameReplacer) {
         self.networkInstructor = networkInstructor
     }
     

@@ -1,13 +1,15 @@
 import Foundation
 
 public protocol JokesStore {
-    typealias DeletionResult = Result<Void, Error>
+    
+    typealias VoidErrorResult = Result<Void, Error>
+    typealias DeletionResult = VoidErrorResult
     typealias DeletionCompletion = (DeletionResult) -> Void
     
-    typealias InsertionResult = Result<Void, Error>
+    typealias InsertionResult = VoidErrorResult
     typealias InsertionCompletion = (InsertionResult) -> Void
     
-    typealias UpdationResult = Result<Void, Error>
+    typealias UpdationResult = VoidErrorResult
     typealias UpdationCompletion = (InsertionResult) -> Void
     
     typealias RetriveJokesResult = Result<[LocalJoke], Error>

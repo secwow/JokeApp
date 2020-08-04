@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         window = UIWindow()
         
-        let router = RouterImp(rootController: navigationController)
+        let router = RouterImplementation(rootController: navigationController)
         self.coordinator = AppCoordinator(router: router,
         serviceFactory: ServiceFactory())
         

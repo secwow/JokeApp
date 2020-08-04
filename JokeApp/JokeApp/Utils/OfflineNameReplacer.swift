@@ -1,6 +1,6 @@
 import DomainLogic
 
-final class ChuckNorrisReplaceDecorator: JokesLoader {
+final class OfflineNameReplacerDecorator: JokesLoader {
     let decoratee: JokesLoader
     let service: ReplacingState
     

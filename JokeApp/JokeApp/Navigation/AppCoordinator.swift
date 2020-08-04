@@ -27,16 +27,13 @@ class AppCoordinator: Coordinator {
     }
     
     func presentAddNewJoke() {
-        let vc = AddNewJokeComposer.compose(serviceFactory.storage)
-        vc.modalPresentationStyle = .overFullScreen
-        
-        vc.cancel = { [weak self] in
+        let dismissClosure: (() -> ())? = { [weak self] in
             self?.router.dismissModule()
         }
-        
-        vc.save = { [weak self] _ in
-            self?.router.dismissModule()
-        }
+        let vc = AddNewJokeComposer.compose(serviceFactory.storage,
+                                            onClose: dismissClosure,
+                                            onSave: dismissClosure)
+     
         self.router.present(vc)
     }
 }

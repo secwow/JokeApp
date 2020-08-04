@@ -5,5 +5,3 @@ protocol JokesListViewModel {
     func updateFeed()
     func loadNext()
 }
-
-

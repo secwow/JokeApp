@@ -1,3 +1,3 @@
 import Foundation
 
-extension ReplacingInstructor: ChuckNorrisProtocol {}
+extension ReplacingInstructor: OfflineNameReplacer {}

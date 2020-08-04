@@ -25,9 +25,9 @@ class MainTabBarViewController: UITabBarController {
     }
     
     func setupTabBar() {
-        self.tabBar.items?[0].title = "Feed"
-        self.tabBar.items?[1].title = "My Jokes"
-        self.tabBar.items?[2].title = "Settings"
+        self.tabBar.items?[MainTab.jokesFeed.rawValue].title = MainTab.jokesFeed.titleTab
+        self.tabBar.items?[MainTab.myJokes.rawValue].title = MainTab.myJokes.titleTab
+        self.tabBar.items?[MainTab.settings.rawValue].title = MainTab.settings.titleTab
         
         self.tabBar.tintColor = .red
     }
@@ -64,6 +64,19 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
             self.tabDelegate?.didSelectedMyJokes(navigation: controller)
         case .settings:
             self.tabDelegate?.didSelectedSettings(navigation: controller)
+        }
+    }
+}
+
+extension MainTabBarViewController.MainTab {
+    var titleTab: String {
+        switch self {
+        case .jokesFeed:
+            return "Feed"
+        case .myJokes:
+            return "My Jokes"
+        case .settings:
+            return "Settings"
         }
     }
 }

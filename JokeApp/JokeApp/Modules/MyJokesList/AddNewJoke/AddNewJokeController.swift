@@ -126,11 +126,10 @@ class AddNewJokeViewController: UIViewController {
     }
     
     @objc func cancelSelected() {
-        cancel?()
+        viewModel?.close()
     }
     
     @objc func saveSelected() {
         viewModel?.saveJoke(joke: jokeTextView.text)
-        save?(jokeTextView.text)
     }
 }

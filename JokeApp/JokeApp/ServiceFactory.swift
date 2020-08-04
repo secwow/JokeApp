@@ -20,7 +20,7 @@ class ServiceFactory {
     }
     
     func makeMainLoader() -> JokesLoader {
-        let replacer = ChuckNorrisReplaceDecorator(decoratee: localLoader,
+        let replacer = OfflineNameReplacerDecorator(decoratee: localLoader,
                                                    service: reaplacingInstructor)
         
         let mainLoader = JokesLoaderCompositor(primaryLoader: CachedJokesLoader(decoratee: remoteLoader,
