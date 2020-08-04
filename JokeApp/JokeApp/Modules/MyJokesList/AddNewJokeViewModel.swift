@@ -1,7 +1,7 @@
 import Foundation
 
 class AddNewJokeViewModel {
-    let service: JokesSavingService
+    private let service: JokesSavingService
     
     init(service: JokesSavingService) {
         self.service = service

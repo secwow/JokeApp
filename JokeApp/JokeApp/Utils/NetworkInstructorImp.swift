@@ -1,7 +1,7 @@
 import Foundation
 
 // Resposible for switch from online to offline mode
-class ReplacingState: NetworkInstructor {
+class ReplacingInstructor: NetworkInstructor {
     private (set) var isOffline: Bool = false
     private (set) var nameToReplace: String
     

@@ -11,15 +11,11 @@ final class JokesListViewModel {
         self.networkInstructor = networkInstructor
     }
 
-    var onLoadingStateChange: Observer<Bool>?
     var onFeedLoad: Observer<[Joke]>?
-    var onErrorAppeared: Observer<Bool>?
     
     private var cummulativeResult: [Joke] = []
     
     func loadFeed() {
-        onLoadingStateChange?(true)
-        onErrorAppeared?(false)
         jokesLoader.load { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -30,10 +26,18 @@ final class JokesListViewModel {
                 } else {
                     self.onFeedLoad?(feed)
                 }
-            case .failure(_):
-                self.onErrorAppeared?(true)
+            default:
+                break
             }
-            self.onLoadingStateChange?(false)
+        }
+    }
+    
+    func updateFeed() {
+        if self.networkInstructor.isOffline == false {
+            self.cummulativeResult = []
+            loadFeed()
+        } else {
+            loadFeed()
         }
     }
     

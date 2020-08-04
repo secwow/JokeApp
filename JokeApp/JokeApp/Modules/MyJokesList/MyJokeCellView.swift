@@ -11,6 +11,7 @@ class MyJokeCellView: UITableViewCell {
     lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.setTitle("Delete", for: .normal)
+        button.setTitleColor(.red, for: .normal)
         return button
     }()
     

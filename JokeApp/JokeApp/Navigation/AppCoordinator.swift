@@ -11,32 +11,23 @@ protocol ShareDelegate: AnyObject {
     func share(_ joke: String)
 }
 
-class AppCoordinator: BaseCoordinator {
+class AppCoordinator: Coordinator {
     let router: Router
-    let remoteLoader: JokesLoader
-    let localLoader: JokesLoader
-    let service: InMemoryJokesStore
-    let networkService: ReplacingState
+    let serviceFactory: ServiceFactory
     
     init(router: Router,
-         remoteLoader: JokesLoader,
-         localLoader: JokesLoader,
-         service: InMemoryJokesStore,
-         networkService: ReplacingState) {
+         serviceFactory: ServiceFactory) {
         self.router = router
-        self.remoteLoader = remoteLoader
-        self.localLoader = localLoader
-        self.service = service
-        self.networkService = networkService
+        self.serviceFactory = serviceFactory
     }
     
-    override func start() {
+    func start() {
         let tab = MainTabBarViewController(delegate: self)
         self.router.setRootModule(tab, hideBar: true)
     }
     
     func presentAddNewJoke() {
-        let vc = AddNewJokeComposer.compose(service)
+        let vc = AddNewJokeComposer.compose(serviceFactory.storage)
         vc.modalPresentationStyle = .overFullScreen
         
         vc.cancel = { [weak self] in
@@ -53,9 +44,9 @@ class AppCoordinator: BaseCoordinator {
 extension AppCoordinator: MainBarDelegate {
     func didSelectedJokesFeed(navigation: UINavigationController) {
         if navigation.viewControllers.isEmpty == true {
-            navigation.pushViewController(JokeListComposer.compose(jokesLoader: remoteLoader,
-                                                                   jokesFavourite: service,
-                                                                   networkInstructor: networkService,
+            navigation.pushViewController(JokeListComposer.compose(jokesLoader: serviceFactory.mainLoader,
+                                                                   jokesFavourite: serviceFactory.storage,
+                                                                   networkInstructor: serviceFactory.reaplacingInstructor,
                                                                    shareDelegate: self),
                                           animated: false)
         }
@@ -63,13 +54,13 @@ extension AppCoordinator: MainBarDelegate {
     
     func didSelectedMyJokes(navigation: UINavigationController) {
         if navigation.viewControllers.isEmpty == true {
-            let (vc, viewModel) = MyJokeListComposer.compose(jokesLoader: localLoader,
-                                                jokesDeletionService: service)
+            let (vc, viewModel) = MyJokeListComposer.compose(jokesLoader: serviceFactory.storage,
+                                                             jokesDeletionService: serviceFactory.storage)
             vc.addNewJoke = { [weak self] in
                 self?.presentAddNewJoke()
             }
             
-            service.onUpdate = { [weak viewModel] in
+            serviceFactory.storage.onUpdate = { [weak viewModel] in
                 viewModel?.loadFeed()
             }
             
@@ -79,7 +70,7 @@ extension AppCoordinator: MainBarDelegate {
     
     func didSelectedSettings(navigation: UINavigationController) {
         if navigation.viewControllers.isEmpty == true {
-            let vc = SettingsComposer.compose(service: networkService)
+            let vc = SettingsComposer.compose(service: serviceFactory.reaplacingInstructor)
             navigation.pushViewController(vc, animated: false)
         }
     }
@@ -88,7 +79,7 @@ extension AppCoordinator: MainBarDelegate {
 extension AppCoordinator: ShareDelegate {
     func share(_ joke: String) {
         let activityViewController = UIActivityViewController(activityItems: [joke], applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook]
         self.router.present(activityViewController)
     }
 }

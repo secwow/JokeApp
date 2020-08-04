@@ -1,9 +1,7 @@
 import UIKit
 
 public final class JokesListViewController: UITableViewController {
-    var viewModel: JokesListViewModel? {
-        didSet { bind() }
-    }
+    var viewModel: JokesListViewModel?
     
     var tableModel = [JokesCellViewController]() {
         didSet { tableView.reloadData() }
@@ -19,18 +17,8 @@ public final class JokesListViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.separatorStyle = .none
         self.tableView.register(JokeCellView.self, forCellReuseIdentifier: "\(JokeCellView.self)")
-        viewModel?.loadFeed()
         self.becomeFirstResponder()
-    }
-    
-    private func bind() {
-        viewModel?.onLoadingStateChange = { isLoading in
-            if isLoading {
-                
-            } else {
-                
-            }
-        }
+        viewModel?.loadFeed()
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +44,7 @@ public final class JokesListViewController: UITableViewController {
 extension JokesListViewController {
     public override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            viewModel?.loadFeed()
+            viewModel?.updateFeed()
         }
     }
 }

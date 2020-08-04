@@ -1,9 +1,19 @@
 import UIKit
 
 public final class MyJokesViewController: UIViewController {
+    private enum Constants {
+        struct AddButton {
+            static let cornerRadius: CGFloat = 30
+            static let trailingOffset: CGFloat = -30
+            static let bottomOffset: CGFloat = -30
+            static let width: CGFloat = 60
+            static let height: CGFloat = 60
+        }
+    }
+    
     lazy var addButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = Constants.AddButton.cornerRadius
         button.backgroundColor = .orange
         button.setTitle("+", for: .normal)
         return button
@@ -47,10 +57,12 @@ public final class MyJokesViewController: UIViewController {
         addButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(addButton)
         NSLayoutConstraint.activate([
-            addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-            addButton.widthAnchor.constraint(equalToConstant: 60),
-            addButton.heightAnchor.constraint(equalToConstant: 60)
+            addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                                                constant: Constants.AddButton.trailingOffset),
+            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                                              constant: Constants.AddButton.bottomOffset),
+            addButton.widthAnchor.constraint(equalToConstant: Constants.AddButton.width),
+            addButton.heightAnchor.constraint(equalToConstant: Constants.AddButton.height)
         ])
         addButton.addTarget(self, action: #selector(addNewJokeSelected), for: .touchUpInside)
     }

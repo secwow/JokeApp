@@ -9,21 +9,16 @@ final class MyJokesListViewModel {
         self.jokesLoader = jokesLoader
     }
     
-    var onLoadingStateChange: Observer<Bool>?
     var onFeedLoad: Observer<[Joke]>?
-    var onErrorAppeared: Observer<Bool>?
     
     func loadFeed() {
-        onLoadingStateChange?(true)
-        onErrorAppeared?(false)
         jokesLoader.load { [weak self] result in
             switch result {
             case let .success(feed):
                 self?.onFeedLoad?(feed)
-            case .failure(_):
-                self?.onErrorAppeared?(true)
+            default:
+                break
             }
-            self?.onLoadingStateChange?(false)
         }
     }
 }

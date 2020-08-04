@@ -1,10 +1,9 @@
 import DomainLogic
 
-class JokesLoaderCompositor: JokesLoader {
-
-    let primaryLoader: JokesLoader
-    let secondaryLoader: JokesLoader
-    let instructor: NetworkInstructor
+final class JokesLoaderCompositor: JokesLoader {
+    private let primaryLoader: JokesLoader
+    private let secondaryLoader: JokesLoader
+    private let instructor: NetworkInstructor
     
     internal init(primaryLoader: JokesLoader, secondaryLoader: JokesLoader, instructor: NetworkInstructor) {
         self.primaryLoader = primaryLoader

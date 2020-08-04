@@ -1,3 +1,3 @@
 import Foundation
 
-extension ReplacingState: ChuckNorrisProtocol {}
+extension ReplacingInstructor: ChuckNorrisProtocol {}
