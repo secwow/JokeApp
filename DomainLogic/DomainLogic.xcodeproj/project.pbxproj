@@ -37,6 +37,7 @@
 		EF6BD4DE24D82C41004DF4B9 /* Jokes+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4DD24D82C41004DF4B9 /* Jokes+Helper.swift */; };
 		EF6BD4E124D82CFF004DF4B9 /* LocalJokesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4E024D82CFF004DF4B9 /* LocalJokesLoader.swift */; };
 		EF6BD4E524D82D52004DF4B9 /* JokesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4E424D82D52004DF4B9 /* JokesCache.swift */; };
+		EF822F0924D9F3E90097877A /* LocalJokesLoader+JokesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822F0824D9F3E90097877A /* LocalJokesLoader+JokesCache.swift */; };
 		EFE7AABC24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE7AABB24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		EF6BD4DD24D82C41004DF4B9 /* Jokes+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Jokes+Helper.swift"; sourceTree = "<group>"; };
 		EF6BD4E024D82CFF004DF4B9 /* LocalJokesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJokesLoader.swift; sourceTree = "<group>"; };
 		EF6BD4E424D82D52004DF4B9 /* JokesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCache.swift; sourceTree = "<group>"; };
+		EF822F0824D9F3E90097877A /* LocalJokesLoader+JokesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalJokesLoader+JokesCache.swift"; sourceTree = "<group>"; };
 		EFE7AABB24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJokesLoaderSaveTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 			children = (
 				EF352B7824D0743600736438 /* RemoteJokesLoader.swift */,
 				EF6BD4E024D82CFF004DF4B9 /* LocalJokesLoader.swift */,
+				EF822F0824D9F3E90097877A /* LocalJokesLoader+JokesCache.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				EF6BD4E124D82CFF004DF4B9 /* LocalJokesLoader.swift in Sources */,
 				EF6BD4CB24D76615004DF4B9 /* JokesCachedStore.swift in Sources */,
 				EF352B7924D0743600736438 /* RemoteJokesLoader.swift in Sources */,
+				EF822F0924D9F3E90097877A /* LocalJokesLoader+JokesCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
