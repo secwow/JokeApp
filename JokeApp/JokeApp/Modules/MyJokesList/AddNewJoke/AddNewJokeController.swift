@@ -2,21 +2,21 @@ import UIKit
 
 class AddNewJokeViewController: UIViewController {
     private enum Constants {
-        struct Container {
+        enum Container {
             static let yOffset: CGFloat = -40
             static let width: CGFloat = 200
             static let height: CGFloat = 150
         }
         
-        struct Title {
+        enum Title {
             static let leadingOffset: CGFloat = 8
         }
         
-        struct JokeText {
+        enum JokeText {
             static let offset: CGFloat = 8
         }
         
-        struct ButtonStack {
+        enum ButtonStack {
             static let offset: CGFloat = 8
             static let height: CGFloat = 40
         }

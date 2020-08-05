@@ -2,11 +2,11 @@ import UIKit
 
 class JokeCellView: UITableViewCell {
     private enum Constants {
-        struct JokeLabel {
+        enum JokeLabel {
             static let offset: CGFloat = 8
         }
         
-        struct ButtonStack {
+        enum ButtonStack {
             static let offset: CGFloat = 8
             static let height: CGFloat = 50
             static let width: CGFloat = 180

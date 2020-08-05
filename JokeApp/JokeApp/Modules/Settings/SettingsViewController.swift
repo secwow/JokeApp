@@ -3,26 +3,26 @@ import DomainLogic
 
 class SettingsViewController: UIViewController {
     enum Constants {
-        struct FirstNameTextField {
+        enum FirstNameTextField {
             static let offset: CGFloat = 16
             static let height: CGFloat = 60
         }
         
-        struct LastNameTextField {
+        enum LastNameTextField {
              static let offset: CGFloat = 16
              static let height: CGFloat = 60
         }
         
-        struct OfflineLabel {
+        enum OfflineLabel {
              static let offset: CGFloat = 16
              static let height: CGFloat = 60
         }
         
-        struct NetworkSwitcher {
+        enum NetworkSwitcher {
              static let trailingOffset: CGFloat = 16
         }
         
-        struct TextFields {
+        enum TextFields {
             static let cornerRadius: CGFloat = 5
             static let borderWidth: CGFloat = 1
         }

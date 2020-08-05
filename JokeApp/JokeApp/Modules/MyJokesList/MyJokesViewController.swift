@@ -2,7 +2,7 @@ import UIKit
 
 public final class MyJokesViewController: UIViewController {
     private enum Constants {
-        struct AddButton {
+        enum AddButton {
             static let cornerRadius: CGFloat = 30
             static let trailingOffset: CGFloat = -30
             static let bottomOffset: CGFloat = -30
