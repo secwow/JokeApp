@@ -12,7 +12,7 @@ class MainTabBarViewController: UITabBarController {
         super.init(coder: coder)
     }
     
-    enum MainTab: Int {
+    enum Tabs: Int {
         case jokesFeed = 0
         case myJokes
         case settings
@@ -25,9 +25,9 @@ class MainTabBarViewController: UITabBarController {
     }
     
     func setupTabBar() {
-        self.tabBar.items?[MainTab.jokesFeed.rawValue].title = MainTab.jokesFeed.titleTab
-        self.tabBar.items?[MainTab.myJokes.rawValue].title = MainTab.myJokes.titleTab
-        self.tabBar.items?[MainTab.settings.rawValue].title = MainTab.settings.titleTab
+        self.tabBar.items?[Tabs.jokesFeed.rawValue].title = Tabs.jokesFeed.titleTab
+        self.tabBar.items?[Tabs.myJokes.rawValue].title = Tabs.myJokes.titleTab
+        self.tabBar.items?[Tabs.settings.rawValue].title = Tabs.settings.titleTab
         
         self.tabBar.tintColor = .red
     }
@@ -46,29 +46,20 @@ class MainTabBarViewController: UITabBarController {
         setupTabBar()
         
         if let controller = customizableViewControllers?.first as? UINavigationController {
-            tabDelegate?.didSelectedJokesFeed(navigation: controller)
+            tabDelegate?.didSelected(tab: .jokesFeed, navigation: controller)
         }
-        
     }
 }
 
 extension MainTabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         guard let controller = viewControllers?[selectedIndex] as? UINavigationController,
-            let tabIndex = MainTab(rawValue: selectedIndex) else { return }
-        
-        switch tabIndex {
-        case .jokesFeed:
-            self.tabDelegate?.didSelectedJokesFeed(navigation: controller)
-        case .myJokes:
-            self.tabDelegate?.didSelectedMyJokes(navigation: controller)
-        case .settings:
-            self.tabDelegate?.didSelectedSettings(navigation: controller)
-        }
+            let tab = Tabs(rawValue: selectedIndex) else { return }
+        tabDelegate?.didSelected(tab: tab, navigation: controller)
     }
 }
 
-extension MainTabBarViewController.MainTab {
+extension MainTabBarViewController.Tabs {
     var titleTab: String {
         switch self {
         case .jokesFeed:

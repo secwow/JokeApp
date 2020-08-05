@@ -8,9 +8,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator: Coordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let navigationController = UINavigationController()
+      
+        startFlow()
+        
+        return true
+    }
+    
+    func startFlow() {
         window = UIWindow()
         
+        let navigationController = UINavigationController()
         let router = ApplicationRouter(rootController: navigationController)
         self.coordinator = AppCoordinator(router: router,
         serviceFactory: ServiceFactory())
@@ -19,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         coordinator?.start()
-        
-        return true
     }
 }
 

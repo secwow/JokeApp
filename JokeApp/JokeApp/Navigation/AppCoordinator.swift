@@ -2,9 +2,7 @@ import DomainLogic
 import UIKit
 
 protocol MainBarDelegate: AnyObject {
-    func didSelectedJokesFeed(navigation: UINavigationController)
-    func didSelectedMyJokes(navigation: UINavigationController)
-    func didSelectedSettings(navigation: UINavigationController)
+    func didSelected(tab: MainTabBarViewController.Tabs, navigation: UINavigationController)
 }
 
 protocol ShareDelegate: AnyObject {
@@ -33,24 +31,26 @@ class AppCoordinator: Coordinator {
         let vc = AddNewJokeComposer.compose(serviceFactory.storage,
                                             onClose: dismissClosure,
                                             onSave: dismissClosure)
-     
+        
         self.router.present(vc)
     }
 }
 
 extension AppCoordinator: MainBarDelegate {
-    func didSelectedJokesFeed(navigation: UINavigationController) {
-        if navigation.viewControllers.isEmpty == true {
+    func didSelected(tab: MainTabBarViewController.Tabs, navigation: UINavigationController) {
+        guard navigation.viewControllers.isEmpty else {
+            return
+        }
+        
+        switch tab {
+            
+        case .jokesFeed:
             navigation.pushViewController(JokeListComposer.compose(jokesLoader: serviceFactory.mainLoader,
                                                                    jokesFavourite: serviceFactory.storage,
                                                                    networkInstructor: serviceFactory.reaplacingInstructor,
                                                                    shareDelegate: self),
                                           animated: false)
-        }
-    }
-    
-    func didSelectedMyJokes(navigation: UINavigationController) {
-        if navigation.viewControllers.isEmpty == true {
+        case .myJokes:
             let (vc, viewModel) = MyJokeListComposer.compose(jokesLoader: serviceFactory.storage,
                                                              jokesDeletionService: serviceFactory.storage)
             vc.addNewJoke = { [weak self] in
@@ -62,11 +62,7 @@ extension AppCoordinator: MainBarDelegate {
             }
             
             navigation.pushViewController(vc, animated: false)
-        }
-    }
-    
-    func didSelectedSettings(navigation: UINavigationController) {
-        if navigation.viewControllers.isEmpty == true {
+        case .settings:
             let vc = SettingsComposer.compose(service: serviceFactory.reaplacingInstructor)
             navigation.pushViewController(vc, animated: false)
         }
