@@ -15,7 +15,7 @@
 		EF1D0E1E24D85FB500550380 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1D24D85FB500550380 /* MainQueueDispatchDecorator.swift */; };
 		EF1D0E2024D8614900550380 /* JokesLoaderCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E1F24D8614900550380 /* JokesLoaderCompositor.swift */; };
 		EF1D0E2224D863A000550380 /* NetworkInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E2124D863A000550380 /* NetworkInstructor.swift */; };
-		EF1D0E2424D863B700550380 /* NetworkInstructorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E2324D863B700550380 /* NetworkInstructorImp.swift */; };
+		EF1D0E2424D863B700550380 /* ReplacingInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E2324D863B700550380 /* ReplacingInstructor.swift */; };
 		EF1D0E2624D863EB00550380 /* CachedJokesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E2524D863EB00550380 /* CachedJokesLoader.swift */; };
 		EF1D0E2A24D874BF00550380 /* JokesFavouriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E2924D874BF00550380 /* JokesFavouriteService.swift */; };
 		EF1D0E2C24D874F800550380 /* InMemoryJokesStore+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D0E2B24D874F800550380 /* InMemoryJokesStore+Services.swift */; };
@@ -92,7 +92,7 @@
 		EF1D0E1D24D85FB500550380 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		EF1D0E1F24D8614900550380 /* JokesLoaderCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesLoaderCompositor.swift; sourceTree = "<group>"; };
 		EF1D0E2124D863A000550380 /* NetworkInstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInstructor.swift; sourceTree = "<group>"; };
-		EF1D0E2324D863B700550380 /* NetworkInstructorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInstructorImp.swift; sourceTree = "<group>"; };
+		EF1D0E2324D863B700550380 /* ReplacingInstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplacingInstructor.swift; sourceTree = "<group>"; };
 		EF1D0E2524D863EB00550380 /* CachedJokesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedJokesLoader.swift; sourceTree = "<group>"; };
 		EF1D0E2924D874BF00550380 /* JokesFavouriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesFavouriteService.swift; sourceTree = "<group>"; };
 		EF1D0E2B24D874F800550380 /* InMemoryJokesStore+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InMemoryJokesStore+Services.swift"; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 			children = (
 				EF822EFF24D9E7EC0097877A /* Protocols */,
 				EF1D0E1F24D8614900550380 /* JokesLoaderCompositor.swift */,
-				EF1D0E2324D863B700550380 /* NetworkInstructorImp.swift */,
+				EF1D0E2324D863B700550380 /* ReplacingInstructor.swift */,
 				EF1D0E2524D863EB00550380 /* CachedJokesLoader.swift */,
 				EF1D0E2124D863A000550380 /* NetworkInstructor.swift */,
 				EF1D0E5924D961DD00550380 /* OfflineNameReplacer.swift */,
@@ -547,7 +547,7 @@
 				EF1D0E1524D8590900550380 /* JokesCellViewModel.swift in Sources */,
 				EF1D0E4824D9464400550380 /* SettingsViewController.swift in Sources */,
 				EF1D0E2A24D874BF00550380 /* JokesFavouriteService.swift in Sources */,
-				EF1D0E2424D863B700550380 /* NetworkInstructorImp.swift in Sources */,
+				EF1D0E2424D863B700550380 /* ReplacingInstructor.swift in Sources */,
 				EF1D0E5824D95CB000550380 /* UIViewController+Keyboard.swift in Sources */,
 				EF1D0E1724D8591D00550380 /* JokesCellViewController.swift in Sources */,
 			);
