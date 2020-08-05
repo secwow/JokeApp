@@ -16,6 +16,17 @@ class MainTabBarViewController: UITabBarController {
         case jokesFeed = 0
         case myJokes
         case settings
+        
+        var titleTab: String {
+            switch self {
+            case .jokesFeed:
+                return "Feed"
+            case .myJokes:
+                return "My Jokes"
+            case .settings:
+                return "Settings"
+            }
+        }
     }
     
     override var selectedIndex: Int {
@@ -56,18 +67,5 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
         guard let controller = viewControllers?[selectedIndex] as? UINavigationController,
             let tab = Tabs(rawValue: selectedIndex) else { return }
         tabDelegate?.didSelected(tab: tab, navigation: controller)
-    }
-}
-
-extension MainTabBarViewController.Tabs {
-    var titleTab: String {
-        switch self {
-        case .jokesFeed:
-            return "Feed"
-        case .myJokes:
-            return "My Jokes"
-        case .settings:
-            return "Settings"
-        }
     }
 }
