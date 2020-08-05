@@ -11,7 +11,6 @@ public class LocalUseCase {
 }
 
 extension LocalUseCase: JokesLoader {
-    // Make it more global
     private enum LocalJokesCachePolicy {        
         private static let calendar = Calendar(identifier: .gregorian)
         
