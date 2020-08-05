@@ -7,7 +7,8 @@ final class JokesItemsMapper {
     }
     
     static func map(_ data: Data, from response: HTTPURLResponse) throws -> [RemoteJoke] {
-        guard response.isOK, let root = try? JSONDecoder().decode(Root.self, from: data) else {
+        guard response.status == .ok,
+            let root = try? JSONDecoder().decode(Root.self, from: data) else {
             throw RemoteJokesLoader.Error.invalidData
         }
 

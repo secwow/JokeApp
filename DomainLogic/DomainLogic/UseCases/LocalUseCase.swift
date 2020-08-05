@@ -1,6 +1,6 @@
 import Foundation
 
-public class LocalJokesLoader {
+public class LocalUseCase {
     let store: JokesCachedStore
     let currentDate: () -> Date
     
@@ -10,7 +10,8 @@ public class LocalJokesLoader {
     }
 }
 
-extension LocalJokesLoader: JokesLoader {
+extension LocalUseCase: JokesLoader {
+    // Make it more global
     private enum LocalJokesCachePolicy {        
         private static let calendar = Calendar(identifier: .gregorian)
         
@@ -44,3 +45,16 @@ extension LocalJokesLoader: JokesLoader {
           }
       }
 }
+
+private extension LocalJoke {
+    var model: Joke {
+        return Joke(with: self.id, joke: self.joke)
+    }
+}
+
+public extension Array where Element == LocalJoke {
+    var model: [Joke] {
+        return self.map({$0.model})
+    }
+}
+

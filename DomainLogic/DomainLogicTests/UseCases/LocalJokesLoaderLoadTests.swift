@@ -123,9 +123,9 @@ class LocalJokesLoaderLoadTests: XCTestCase {
     
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let store = JokesStoreSpy()
-        var sut: LocalJokesLoader? = LocalJokesLoader(with: store, currentDate: Date.init)
+        var sut: LocalUseCase? = LocalUseCase(with: store, currentDate: Date.init)
         
-        var receivedResults = [LocalJokesLoader.LoadResult]()
+        var receivedResults = [LocalUseCase.LoadResult]()
         sut?.load { receivedResults.append($0) }
         
         sut = nil
@@ -138,14 +138,14 @@ class LocalJokesLoaderLoadTests: XCTestCase {
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: JokesLoader, store: JokesStoreSpy) {
         let store = JokesStoreSpy()
-        let sut = LocalJokesLoader(with: store, currentDate: currentDate)
+        let sut = LocalUseCase(with: store, currentDate: currentDate)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, store)
     }
     
     private func expect(_ sut: JokesLoader,
-                        toCompleteWith expectedResult: LocalJokesLoader.LoadResult,
+                        toCompleteWith expectedResult: LocalUseCase.LoadResult,
                         when action: () -> Void,
                         file: StaticString = #file,
                         line: UInt = #line) {

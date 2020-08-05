@@ -68,9 +68,9 @@ class LocalJokesLoaderSaveTests: XCTestCase {
     
     func test_save_doesNotDeliverDeletionErrorAfterSUTInstanceHasBeenDeallocated() {
         let store = JokesStoreSpy()
-        var sut: LocalJokesLoader? = LocalJokesLoader(with: store, currentDate: Date.init)
+        var sut: LocalUseCase? = LocalUseCase(with: store, currentDate: Date.init)
         
-        var receivedResults = [LocalJokesLoader.SaveResult]()
+        var receivedResults = [LocalUseCase.SaveResult]()
         sut?.save(makeJokesFeed().feed.model) { receivedResults.append($0) }
         
         sut = nil
@@ -81,9 +81,9 @@ class LocalJokesLoaderSaveTests: XCTestCase {
     
     func test_save_doesNotDeliverInsertionErrorAfterSUTInstanceHasBeenDeallocated() {
         let store = JokesStoreSpy()
-        var sut: LocalJokesLoader? = LocalJokesLoader(with: store, currentDate: Date.init)
+        var sut: LocalUseCase? = LocalUseCase(with: store, currentDate: Date.init)
         
-        var receivedResults = [LocalJokesLoader.SaveResult]()
+        var receivedResults = [LocalUseCase.SaveResult]()
         sut?.save(makeJokesFeed().feed.model) { receivedResults.append($0) }
         
         store.completeDeletionSuccessfully()
@@ -95,15 +95,15 @@ class LocalJokesLoaderSaveTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalJokesLoader, store: JokesStoreSpy) {
+    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalUseCase, store: JokesStoreSpy) {
         let store = JokesStoreSpy()
-        let sut = LocalJokesLoader(with: store, currentDate: currentDate)
+        let sut = LocalUseCase(with: store, currentDate: currentDate)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, store)
     }
     
-    private func expect(_ sut: LocalJokesLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    private func expect(_ sut: LocalUseCase, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for save completion")
         
         var receivedError: Error?
@@ -116,5 +116,17 @@ class LocalJokesLoaderSaveTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
         
         XCTAssertEqual(receivedError as NSError?, expectedError, file: file, line: line)
+    }
+}
+
+extension LocalJoke {
+    var model: Joke {
+        return Joke(with: self.id, joke: self.joke)
+    }
+}
+
+extension Array where Element == LocalJoke {
+    var model: [Joke] {
+        return self.map({$0.model})
     }
 }

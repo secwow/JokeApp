@@ -2,13 +2,13 @@ import DomainLogic
 
 extension InMemoryJokesStore: JokesFavouriteService {
     func addToFavourite(_ joke: Joke) {
-        self.insert(joke.local) { _  in }
+        self.insert(.init(joke)) { _  in }
     }
 }
 
 extension InMemoryJokesStore: JokesDeletionService {
     func deleteJoke(_ joke: Joke, completion: @escaping (Result<Void, Error>) -> ()) {
-        self.delete(joke.local, completion: completion)
+        self.delete(.init(joke), completion: completion)
     }
 }
 

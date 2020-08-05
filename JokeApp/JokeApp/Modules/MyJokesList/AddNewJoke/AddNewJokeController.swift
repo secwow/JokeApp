@@ -50,9 +50,6 @@ class AddNewJokeViewController: UIViewController {
     
     var viewModel: AddNewJokeViewModel?
     
-    var cancel: (() -> ())?
-    var save: ((String) -> ())?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

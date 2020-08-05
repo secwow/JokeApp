@@ -9,11 +9,11 @@ class JokesStoreSpy: JokesCachedStore {
     
     private(set) var receivedMessages = [ReceivedMessage]()
     
-    private var deletionCompletions = [DeletionCompletion]()
-    private var insertionCompletions = [InsertionCompletion]()
+    private var deletionCompletions = [UpdationCompletion]()
+    private var insertionCompletions = [UpdationCompletion]()
     private var retrievalCompletions = [RetrievalCompletion]()
     
-    func deleteCachedFeed(completion: @escaping DeletionCompletion) {
+    func deleteCachedFeed(completion: @escaping UpdationCompletion) {
         deletionCompletions.append(completion)
         receivedMessages.append(.deleteCachedFeed)
     }
@@ -26,7 +26,7 @@ class JokesStoreSpy: JokesCachedStore {
         deletionCompletions[index](.success(()))
     }
     
-    func insert(_ feed: [LocalJoke], timestamp: Date, completion: @escaping InsertionCompletion) {
+    func insert(_ feed: [LocalJoke], timestamp: Date, completion: @escaping UpdationCompletion) {
         insertionCompletions.append(completion)
         receivedMessages.append(.insert(feed, timestamp))
     }

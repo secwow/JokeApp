@@ -100,14 +100,14 @@ class JokesStorageTests: XCTestCase {
     
     // - MARK: Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> JokesStore {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> InMemoryJokesStore {
         let sut = InMemoryJokesStore()
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
 
     @discardableResult
-    func insert(_ item: LocalJoke, to sut: JokesStore) -> Error? {
+    func insert<T: Store>(_ item: T.Item, to sut: T) -> Error? {
         let exp = expectation(description: "Wait for store insertion")
         var insertionError: Error?
         sut.insert(item) { result in
@@ -119,7 +119,7 @@ class JokesStorageTests: XCTestCase {
     }
     
     @discardableResult
-    func update(_ item: LocalJoke, in sut: JokesStore) -> Error? {
+    func update<T: Store>(_ item: T.Item, in sut: T) -> Error? {
         let exp = expectation(description: "Wait for store insertion")
         var insertionError: Error?
         sut.update(item) { result in
@@ -131,7 +131,7 @@ class JokesStorageTests: XCTestCase {
     }
 
     @discardableResult
-    func delete(item: LocalJoke, from sut: JokesStore) -> Error? {
+    func delete<T: Store>(item: T.Item, from sut: T) -> Error? {
         let exp = expectation(description: "Wait for joke deletion")
         var deletionError: Error?
         
@@ -144,16 +144,16 @@ class JokesStorageTests: XCTestCase {
         return deletionError
     }
     
-    func expect(_ sut: JokesStore,
-                   toRetriveTwice expectedResult: JokesStore.RetriveJokesResult,
+    func expect<T: Store>(_ sut: T,
+                   toRetriveTwice expectedResult: T.RetriveJokesResult,
                    file: StaticString = #file,
                    line: UInt = #line) {
         expect(sut, toRetrive: expectedResult)
         expect(sut, toRetrive: expectedResult)
     }
     
-    func expect(_ sut: JokesStore,
-                toRetrive expectedResult: JokesStore.RetriveJokesResult,
+    func expect<T: Store>(_ sut: T,
+                toRetrive expectedResult: T.RetriveJokesResult,
                 file: StaticString = #file,
                 line: UInt = #line) {
         let exp = expectation(description: "Wait for retrive data from store")

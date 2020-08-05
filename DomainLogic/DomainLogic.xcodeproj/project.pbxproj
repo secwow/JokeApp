@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF026F2A24DAC02300B8C2D9 /* LocalJoke+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF026F2924DAC02300B8C2D9 /* LocalJoke+Mapping.swift */; };
 		EF352B5E24D05C9300736438 /* DomainLogic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF352B5424D05C9300736438 /* DomainLogic.framework */; };
 		EF352B6324D05C9300736438 /* SessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF352B6224D05C9300736438 /* SessionHTTPClientTests.swift */; };
 		EF352B6524D05C9300736438 /* DomainLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = EF352B5724D05C9300736438 /* DomainLogic.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,23 +22,20 @@
 		EF352B7F24D083DA00736438 /* RemoteJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF352B7E24D083DA00736438 /* RemoteJoke.swift */; };
 		EF352B8124D083F500736438 /* JokesItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF352B8024D083F500736438 /* JokesItemsMapper.swift */; };
 		EF352B8324D0842600736438 /* HTTPURLResponse+StatusCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF352B8224D0842600736438 /* HTTPURLResponse+StatusCheck.swift */; };
-		EF6BD4BC24D6B36B004DF4B9 /* JokesCachedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4BB24D6B36B004DF4B9 /* JokesCachedStore.swift */; };
+		EF6BD4BC24D6B36B004DF4B9 /* CachedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4BB24D6B36B004DF4B9 /* CachedStore.swift */; };
 		EF6BD4BE24D6C29C004DF4B9 /* JokesStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4BD24D6C29C004DF4B9 /* JokesStorageTests.swift */; };
-		EF6BD4C324D7659C004DF4B9 /* JokesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4C224D7659C004DF4B9 /* JokesStore.swift */; };
-		EF6BD4C524D765B4004DF4B9 /* FavouriteJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4C424D765B4004DF4B9 /* FavouriteJoke.swift */; };
+		EF6BD4C324D7659C004DF4B9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4C224D7659C004DF4B9 /* Store.swift */; };
 		EF6BD4C724D765C3004DF4B9 /* InMemoryJokesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4C624D765C3004DF4B9 /* InMemoryJokesStore.swift */; };
 		EF6BD4C924D76603004DF4B9 /* LocalJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4C824D76603004DF4B9 /* LocalJoke.swift */; };
-		EF6BD4CB24D76615004DF4B9 /* JokesCachedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4CA24D76615004DF4B9 /* JokesCachedStore.swift */; };
+		EF6BD4CB24D76615004DF4B9 /* CachedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4CA24D76615004DF4B9 /* CachedStore.swift */; };
 		EF6BD4CD24D7662C004DF4B9 /* InMemoryCachedJokesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4CC24D7662C004DF4B9 /* InMemoryCachedJokesStore.swift */; };
-		EF6BD4CF24D7664B004DF4B9 /* LocalJoke+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4CE24D7664B004DF4B9 /* LocalJoke+Helpers.swift */; };
-		EF6BD4D124D766BD004DF4B9 /* FavouriteJoke+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4D024D766BD004DF4B9 /* FavouriteJoke+Equatable.swift */; };
+		EF6BD4CF24D7664B004DF4B9 /* LocalJoke+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4CE24D7664B004DF4B9 /* LocalJoke+Equatable.swift */; };
 		EF6BD4D324D767B3004DF4B9 /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4D224D767B3004DF4B9 /* XCTestCase+Helpers.swift */; };
 		EF6BD4DA24D81983004DF4B9 /* LocalJokesLoaderLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4D924D81983004DF4B9 /* LocalJokesLoaderLoadTests.swift */; };
 		EF6BD4DC24D82055004DF4B9 /* StoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4DB24D82055004DF4B9 /* StoreSpy.swift */; };
-		EF6BD4DE24D82C41004DF4B9 /* Jokes+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4DD24D82C41004DF4B9 /* Jokes+Helper.swift */; };
-		EF6BD4E124D82CFF004DF4B9 /* LocalJokesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4E024D82CFF004DF4B9 /* LocalJokesLoader.swift */; };
+		EF6BD4E124D82CFF004DF4B9 /* LocalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4E024D82CFF004DF4B9 /* LocalUseCase.swift */; };
 		EF6BD4E524D82D52004DF4B9 /* JokesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BD4E424D82D52004DF4B9 /* JokesCache.swift */; };
-		EF822F0924D9F3E90097877A /* LocalJokesLoader+JokesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822F0824D9F3E90097877A /* LocalJokesLoader+JokesCache.swift */; };
+		EF822F0924D9F3E90097877A /* LocalUseCase+JokesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF822F0824D9F3E90097877A /* LocalUseCase+JokesCache.swift */; };
 		EFE7AABC24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE7AABB24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF026F2924DAC02300B8C2D9 /* LocalJoke+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalJoke+Mapping.swift"; sourceTree = "<group>"; };
 		EF352B5424D05C9300736438 /* DomainLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DomainLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF352B5724D05C9300736438 /* DomainLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomainLogic.h; sourceTree = "<group>"; };
 		EF352B5824D05C9300736438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,23 +68,20 @@
 		EF352B7E24D083DA00736438 /* RemoteJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteJoke.swift; sourceTree = "<group>"; };
 		EF352B8024D083F500736438 /* JokesItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesItemsMapper.swift; sourceTree = "<group>"; };
 		EF352B8224D0842600736438 /* HTTPURLResponse+StatusCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCheck.swift"; sourceTree = "<group>"; };
-		EF6BD4BB24D6B36B004DF4B9 /* JokesCachedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCachedStore.swift; sourceTree = "<group>"; };
+		EF6BD4BB24D6B36B004DF4B9 /* CachedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedStore.swift; sourceTree = "<group>"; };
 		EF6BD4BD24D6C29C004DF4B9 /* JokesStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesStorageTests.swift; sourceTree = "<group>"; };
-		EF6BD4C224D7659C004DF4B9 /* JokesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesStore.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		EF6BD4C424D765B4004DF4B9 /* FavouriteJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteJoke.swift; sourceTree = "<group>"; };
+		EF6BD4C224D7659C004DF4B9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EF6BD4C624D765C3004DF4B9 /* InMemoryJokesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryJokesStore.swift; sourceTree = "<group>"; };
 		EF6BD4C824D76603004DF4B9 /* LocalJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJoke.swift; sourceTree = "<group>"; };
-		EF6BD4CA24D76615004DF4B9 /* JokesCachedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCachedStore.swift; sourceTree = "<group>"; };
+		EF6BD4CA24D76615004DF4B9 /* CachedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedStore.swift; sourceTree = "<group>"; };
 		EF6BD4CC24D7662C004DF4B9 /* InMemoryCachedJokesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCachedJokesStore.swift; sourceTree = "<group>"; };
-		EF6BD4CE24D7664B004DF4B9 /* LocalJoke+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalJoke+Helpers.swift"; sourceTree = "<group>"; };
-		EF6BD4D024D766BD004DF4B9 /* FavouriteJoke+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteJoke+Equatable.swift"; sourceTree = "<group>"; };
+		EF6BD4CE24D7664B004DF4B9 /* LocalJoke+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalJoke+Equatable.swift"; sourceTree = "<group>"; };
 		EF6BD4D224D767B3004DF4B9 /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
 		EF6BD4D924D81983004DF4B9 /* LocalJokesLoaderLoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJokesLoaderLoadTests.swift; sourceTree = "<group>"; };
 		EF6BD4DB24D82055004DF4B9 /* StoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSpy.swift; sourceTree = "<group>"; };
-		EF6BD4DD24D82C41004DF4B9 /* Jokes+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Jokes+Helper.swift"; sourceTree = "<group>"; };
-		EF6BD4E024D82CFF004DF4B9 /* LocalJokesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJokesLoader.swift; sourceTree = "<group>"; };
+		EF6BD4E024D82CFF004DF4B9 /* LocalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUseCase.swift; sourceTree = "<group>"; };
 		EF6BD4E424D82D52004DF4B9 /* JokesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCache.swift; sourceTree = "<group>"; };
-		EF822F0824D9F3E90097877A /* LocalJokesLoader+JokesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalJokesLoader+JokesCache.swift"; sourceTree = "<group>"; };
+		EF822F0824D9F3E90097877A /* LocalUseCase+JokesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalUseCase+JokesCache.swift"; sourceTree = "<group>"; };
 		EFE7AABB24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJokesLoaderSaveTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,9 +162,9 @@
 		EF6BD4C024D76587004DF4B9 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				EF6BD4CA24D76615004DF4B9 /* JokesCachedStore.swift */,
+				EF6BD4CA24D76615004DF4B9 /* CachedStore.swift */,
 				EF6BD4CC24D7662C004DF4B9 /* InMemoryCachedJokesStore.swift */,
-				EF6BD4CE24D7664B004DF4B9 /* LocalJoke+Helpers.swift */,
+				EF6BD4CE24D7664B004DF4B9 /* LocalJoke+Equatable.swift */,
 				EF6BD4E424D82D52004DF4B9 /* JokesCache.swift */,
 			);
 			path = Cache;
@@ -177,10 +173,8 @@
 		EF6BD4C124D7658D004DF4B9 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				EF822EF624D9E67F0097877A /* Model */,
-				EF6BD4C224D7659C004DF4B9 /* JokesStore.swift */,
+				EF6BD4C224D7659C004DF4B9 /* Store.swift */,
 				EF6BD4C624D765C3004DF4B9 /* InMemoryJokesStore.swift */,
-				EF6BD4D024D766BD004DF4B9 /* FavouriteJoke+Equatable.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -208,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				EF352B7824D0743600736438 /* RemoteJokesLoader.swift */,
-				EF6BD4E024D82CFF004DF4B9 /* LocalJokesLoader.swift */,
-				EF822F0824D9F3E90097877A /* LocalJokesLoader+JokesCache.swift */,
+				EF6BD4E024D82CFF004DF4B9 /* LocalUseCase.swift */,
+				EF822F0824D9F3E90097877A /* LocalUseCase+JokesCache.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -219,7 +213,6 @@
 			children = (
 				EF352B7424D06C6800736438 /* JokesLoader.swift */,
 				EF352B7624D070FC00736438 /* Joke.swift */,
-				EF6BD4DD24D82C41004DF4B9 /* Jokes+Helper.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -228,14 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				EF6BD4C824D76603004DF4B9 /* LocalJoke.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EF822EF624D9E67F0097877A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EF6BD4C424D765B4004DF4B9 /* FavouriteJoke.swift */,
+				EF026F2924DAC02300B8C2D9 /* LocalJoke+Mapping.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,7 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				EF6BD4BD24D6C29C004DF4B9 /* JokesStorageTests.swift */,
-				EF6BD4BB24D6B36B004DF4B9 /* JokesCachedStore.swift */,
+				EF6BD4BB24D6B36B004DF4B9 /* CachedStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -397,24 +383,22 @@
 			files = (
 				EF352B8324D0842600736438 /* HTTPURLResponse+StatusCheck.swift in Sources */,
 				EF352B6F24D05D2900736438 /* HTTPClient.swift in Sources */,
-				EF6BD4D124D766BD004DF4B9 /* FavouriteJoke+Equatable.swift in Sources */,
-				EF6BD4C524D765B4004DF4B9 /* FavouriteJoke.swift in Sources */,
-				EF6BD4DE24D82C41004DF4B9 /* Jokes+Helper.swift in Sources */,
 				EF352B7524D06C6800736438 /* JokesLoader.swift in Sources */,
 				EF6BD4CD24D7662C004DF4B9 /* InMemoryCachedJokesStore.swift in Sources */,
 				EF6BD4E524D82D52004DF4B9 /* JokesCache.swift in Sources */,
 				EF352B7F24D083DA00736438 /* RemoteJoke.swift in Sources */,
 				EF352B7724D070FC00736438 /* Joke.swift in Sources */,
-				EF6BD4CF24D7664B004DF4B9 /* LocalJoke+Helpers.swift in Sources */,
+				EF6BD4CF24D7664B004DF4B9 /* LocalJoke+Equatable.swift in Sources */,
 				EF352B7124D05D6E00736438 /* SessionHTTPClient.swift in Sources */,
 				EF6BD4C724D765C3004DF4B9 /* InMemoryJokesStore.swift in Sources */,
+				EF026F2A24DAC02300B8C2D9 /* LocalJoke+Mapping.swift in Sources */,
 				EF352B8124D083F500736438 /* JokesItemsMapper.swift in Sources */,
-				EF6BD4C324D7659C004DF4B9 /* JokesStore.swift in Sources */,
+				EF6BD4C324D7659C004DF4B9 /* Store.swift in Sources */,
 				EF6BD4C924D76603004DF4B9 /* LocalJoke.swift in Sources */,
-				EF6BD4E124D82CFF004DF4B9 /* LocalJokesLoader.swift in Sources */,
-				EF6BD4CB24D76615004DF4B9 /* JokesCachedStore.swift in Sources */,
+				EF6BD4E124D82CFF004DF4B9 /* LocalUseCase.swift in Sources */,
+				EF6BD4CB24D76615004DF4B9 /* CachedStore.swift in Sources */,
 				EF352B7924D0743600736438 /* RemoteJokesLoader.swift in Sources */,
-				EF822F0924D9F3E90097877A /* LocalJokesLoader+JokesCache.swift in Sources */,
+				EF822F0924D9F3E90097877A /* LocalUseCase+JokesCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF6BD4DC24D82055004DF4B9 /* StoreSpy.swift in Sources */,
-				EF6BD4BC24D6B36B004DF4B9 /* JokesCachedStore.swift in Sources */,
+				EF6BD4BC24D6B36B004DF4B9 /* CachedStore.swift in Sources */,
 				EFE7AABC24D841AE009E8B02 /* LocalJokesLoaderSaveTests.swift in Sources */,
 				EF6BD4DA24D81983004DF4B9 /* LocalJokesLoaderLoadTests.swift in Sources */,
 				EF6BD4BE24D6C29C004DF4B9 /* JokesStorageTests.swift in Sources */,

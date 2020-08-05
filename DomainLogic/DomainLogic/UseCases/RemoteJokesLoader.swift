@@ -1,7 +1,6 @@
 import Foundation
 
 public class RemoteJokesLoader: JokesLoader {
-    
     private let url: URL
     private let client: HTTPClient
     

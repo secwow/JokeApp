@@ -5,12 +5,12 @@ public final class InMemoryCachedJokesStore: JokesCachedStore {
     
     public init() {}
     
-    public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
+    public func deleteCachedFeed(completion: @escaping UpdationCompletion) {
         cache = nil
         completion(.success(()))
     }
     
-    public func insert(_ feed: [LocalJoke], timestamp: Date, completion: @escaping InsertionCompletion) {
+    public func insert(_ feed: [LocalJoke], timestamp: Date, completion: @escaping UpdationCompletion) {
         cache = (feed, timestamp)
         completion(.success(()))
     }

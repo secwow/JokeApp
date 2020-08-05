@@ -1,6 +1,6 @@
 import Foundation
 
-extension LocalJokesLoader: JokesCache {
+extension LocalUseCase: JokesCache {
     public typealias SaveResult = JokesCache.Result
 
       public func save(_ jokes: [Joke], completion: @escaping (SaveResult) -> Void) {

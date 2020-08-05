@@ -8,8 +8,8 @@ class ServiceFactory {
     private lazy var remoteLoader = makeRemoteLoader()
     private (set) lazy var mainLoader = makeMainLoader()
     
-    func makeLocalLoader() -> LocalJokesLoader {
-        return LocalJokesLoader(with: cache, currentDate: Date.init)
+    func makeLocalLoader() -> LocalUseCase {
+        return LocalUseCase(with: cache, currentDate: Date.init)
     }
     
     func makeRemoteLoader() -> JokesLoader {

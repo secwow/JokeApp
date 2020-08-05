@@ -1,7 +1,7 @@
 import Foundation
 
-public final class InMemoryJokesStore: JokesStore {
-    private var jokes: [FavouriteJoke] = [] {
+public final class InMemoryJokesStore: Store {
+    private var jokes: [LocalJoke] = [] {
         didSet {
             onUpdate?()
         }
@@ -15,23 +15,23 @@ public final class InMemoryJokesStore: JokesStore {
     
     public init() {}
     
-    public func insert(_ joke: LocalJoke, completion: @escaping InsertionCompletion) {
-        jokes.append(joke.favourite)
+    public func insert(_ joke: LocalJoke, completion: @escaping UpdationCompletion) {
+        jokes.append(joke)
         completion(.success(()))
     }
     
     public func update(_ joke: LocalJoke, completion: @escaping UpdationCompletion) {
-        guard let index = jokes.firstIndex(of: joke.favourite) else {
+        guard let index = jokes.firstIndex(of: joke) else {
             completion(.failure(Error.updatingUnkownValue))
             return
         }
         
-        jokes[index] = joke.favourite
+        jokes[index] = joke
         completion(.success(()))
     }
     
-    public func delete(_ joke: LocalJoke, completion: @escaping DeletionCompletion) {
-        guard let index = jokes.firstIndex(of: joke.favourite) else {
+    public func delete(_ joke: LocalJoke, completion: @escaping UpdationCompletion) {
+        guard let index = jokes.firstIndex(of: joke) else {
             completion(.success(()))
             return
         }
@@ -41,18 +41,6 @@ public final class InMemoryJokesStore: JokesStore {
     }
 
     public func getAll(completion: @escaping RetriveJokesCompletion) {
-        completion(.success(jokes.local))
-    }
-}
-
-private extension Array where Element == FavouriteJoke {
-    var local: [LocalJoke] {
-        return self.map({$0.local})
-    }
-}
-
-private extension FavouriteJoke {
-    var local: LocalJoke {
-        return LocalJoke(with: id, joke: joke)
+        completion(.success(jokes))
     }
 }
